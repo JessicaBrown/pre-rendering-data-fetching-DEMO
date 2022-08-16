@@ -3,7 +3,7 @@ import classes from "./eventList.module.scss";
 
 export default function EventList(props) {
 	const { items } = props;
-	console.log(items);
+	// console.log('ITEMS IN EVENTLIST', items);
 	return (
 		<ul className={classes.list}>
 			{items.map((event) => (

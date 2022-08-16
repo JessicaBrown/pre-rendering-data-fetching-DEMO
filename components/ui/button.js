@@ -2,7 +2,7 @@ import Link from "next/link";
 import classes from "./button.module.scss";
 
 export default function Button(props) {
-	console.log(props.link);
+	// console.log('BUTTON PROPS', props.link);
 	if (props.link) {
 		return (
 			<Link href={props.link}>

@@ -1,11 +1,25 @@
-import { getFeaturedEvents } from '../dummy-data';
+import { getFeaturedEvents } from '../helpers/api-util';
 import EventList from '../components/events/EventList';
 
-export default function HomePage() {
-	const featuredEvents = getFeaturedEvents();
+export default function HomePage(props) {
+	// const featuredEvents = getFeaturedEvents();
+
 	return (
 		<div>
-			<EventList items={featuredEvents} />
+			<EventList items={props.events} />
 		</div>
 	);
 }
+export async function getStaticProps() {
+	const featuredEvents = await getFeaturedEvents();
+
+	return{
+		props: {
+			events: featuredEvents
+		}, 
+		// so starting page will find any updates every half hour
+		revalidate: 1800
+	}
+}
+
+  

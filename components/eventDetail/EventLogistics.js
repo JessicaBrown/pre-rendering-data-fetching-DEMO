@@ -17,7 +17,7 @@ export default function EventLogistics(props) {
   return (
     <section className={classes.logistics}>
       <div className={classes.image}>
-        <Image layout='fill' objectFit='contain' src={`/${image}`} alt={imageAlt} />
+        <Image layout='fill' objectFit='cover' src={`/${image}`} alt={imageAlt} />
       </div>
       <ul className={classes.list}>
         <LogisticsItem icon={DateIcon}>
